@@ -1,0 +1,14 @@
+.product-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 20px;
+}
+
+.box {
+    transition: box-shadow .3s;
+    float: left;
+}
+
+.box:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
