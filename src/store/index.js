@@ -6,19 +6,19 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     products: [{
-      name: 'Arroz',
+      name: 'Arroz Diana',
       price: '2000',
       contentWeight: '500gr',
       description: 'Arroz blanco parvolizado',
       image: './assets/img/arrozDiana.jpg',
     }, {
-      name: 'Arroz',
+      name: 'Arroz Diana',
       price: '2000',
       contentWeight: '500gr',
       description: 'Arroz blanco parvolizado',
       image: './assets/img/arrozDiana.jpg',
     }, {
-      name: 'Arroz',
+      name: 'Arroz Diana',
       price: '2000',
       contentWeight: '500gr',
       description: 'Arroz blanco parvolizado',
@@ -40,5 +40,4 @@ export default new Vuex.Store({
       dispatch('SET_PRODUCTS', products);
     },
   },
-  modules: {},
 });

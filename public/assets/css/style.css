@@ -4,9 +4,26 @@
     padding: 20px;
 }
 
+.product-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.product-description {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .box {
     transition: box-shadow .3s;
     float: left;
+    cursor: pointer;
 }
 
 .box:hover {
