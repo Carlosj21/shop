@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="row" :key="i" v-for="(product, i) in products">
+  <div class="row">
+    <div :key="i" v-for="(product, i) in products" @click="setInspectorProduct(i)">
       <product-item :product="product"/>
     </div>
   </div>
@@ -15,11 +15,6 @@ export default {
   components: {
     ProductItem,
   },
-  data() {
-    return {
-      var: {},
-    };
-  },
   computed: {
     ...mapState([
       'products',
@@ -28,6 +23,7 @@ export default {
   methods: {
     ...mapActions([
       'getProducts',
+      'setInspectorProduct',
     ]),
   },
 };
