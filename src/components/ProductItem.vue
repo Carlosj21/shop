@@ -1,5 +1,5 @@
 <template>
-  <div class="product-item box container">
+  <div class="product-item product-box container">
     <div class="row">
       <div class="six columns">
         <div class="flexContainer">
