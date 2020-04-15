@@ -1,10 +1,13 @@
 <template>
   <div class="product-item product-box container">
     <div class="row">
-      <div class="six columns">
-        <div class="flexContainer">
+      <div class="six columns" @mouseleave="hover = false" @mouseover="hover = true">
+        <div :class="['flexContainer product-image',
+        { 'product-image-blur': hover }]">
           <img :src="product.image" alt="imagen" height="200">
         </div>
+        <input class="add-btn" type="button"
+               v-if="hover" value="Agregar">
       </div>
       <div class="six columns flexContainer">
         <div class="row">
@@ -38,6 +41,11 @@
 <script>
 export default {
   name: 'ProductItem',
+  data() {
+    return {
+      hover: false,
+    };
+  },
   props: {
     product: {
       type: Object,

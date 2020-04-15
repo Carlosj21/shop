@@ -10,6 +10,11 @@
     box-shadow: 0 0 11px rgba(33, 33, 33, .2);
 }
 
+.product-image-blur {
+    webkit-filter: blur(4px);
+    filter: blur(4px);
+}
+
 .product-title {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -24,4 +29,10 @@
 .product-price {
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.add-btn {
+    position: absolute;
+    top: calc(50% - 10%);
+    left: calc(50% - 40%)
 }
