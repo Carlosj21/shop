@@ -59,7 +59,7 @@ export default new Vuex.Store({
   },
   actions: {
     manageProductToCart({ dispatch, state }, { product, action }) {
-      let tempCartProducts = { ...state.cartProducts };
+      const tempCartProducts = { ...state.cartProducts };
       switch (action) {
         case 'add':
           if (tempCartProducts[product.id]) {
@@ -70,10 +70,13 @@ export default new Vuex.Store({
           }
           break;
         case 'remove':
-          if (tempCartProducts[product.id].count === 1) {
-            tempCartProducts = tempCartProducts.filter((prod) => prod.id !== product.id);
-          } else {
-            tempCartProducts[product.id].count -= 1;
+          if (tempCartProducts[product.id]) {
+            if (tempCartProducts[product.id].count === 1) {
+              delete tempCartProducts[product.id];
+              // tempCartProducts = tempCartProducts.filter((prod) => prod.id !== product.id);
+            } else {
+              tempCartProducts[product.id].count -= 1;
+            }
           }
           break;
         default:
