@@ -1,6 +1,14 @@
 <template>
   <div class="container">
-    {{ inspectorItem || JSON }}
+    <div v-if="inspectorItem">
+      {{ inspectorItem || JSON }}
+      <div class="inspector-product-image">
+
+      </div>
+    </div>
+    <div v-else>
+      Please choose a product on the left.
+    </div>
   </div>
 </template>
 
@@ -15,7 +23,7 @@ export default {
     ]),
     inspectorItem: {
       get() {
-        return this.getInspectorProduct ? this.getInspectorProduct : {};
+        return this.getInspectorProduct ? this.getInspectorProduct : null;
       },
     },
   },

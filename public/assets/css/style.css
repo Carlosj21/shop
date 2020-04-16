@@ -30,6 +30,11 @@
     filter: blur(4px);
 }
 
+.cartButton, .cartButton:hover {
+    background: rgba(117, 32, 149, 1);
+    color: #FFFFFF;
+}
+
 .product-cart-count {
     background: rgba(117, 32, 149, 0.83);
     width: 25px;
@@ -60,4 +65,8 @@
     position: absolute;
     top: calc(50% - 10%);
     left: calc(50% - 35%);
+}
+
+.inspector-product-image {
+
 }

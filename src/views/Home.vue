@@ -12,7 +12,7 @@
         </div>
         <div class="six columns store-header">
           <div class="u-pull-right">
-            <button>
+            <button class="cartButton">
               <font-awesome-icon icon="shopping-cart"/>
               {{ cartTotal }}
             </button>
