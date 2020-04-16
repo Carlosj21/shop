@@ -7,18 +7,21 @@ export default new Vuex.Store({
   state: {
     products: [
       {
+        id: 1,
         name: 'Arroz Diana 500gr',
         price: '1500',
         contentWeight: '500gr',
         description: 'Arroz blanco parvolizado',
         image: './assets/img/arrozDiana.jpg',
       }, {
+        id: 2,
         name: 'Arroz Diana 1Kg',
         price: '3000',
         contentWeight: '1000gr',
         description: 'Arroz blanco parvolizado',
         image: './assets/img/arrozDiana.jpg',
       }, {
+        id: 3,
         name: 'Arroz Diana 5Kg',
         price: '15000',
         contentWeight: '5000gr',
@@ -41,9 +44,32 @@ export default new Vuex.Store({
     },
   },
   actions: {
+    manageProductToCart({ dispatch, state }, { product, action }) {
+      let tempCartProducts = { ...state.cartProducts };
+      switch (action) {
+        case 'add':
+          if (tempCartProducts[product.id]) {
+            tempCartProducts[product.id].count += 1;
+          } else {
+            tempCartProducts[product.id] = product;
+            tempCartProducts[product.id].count = 1;
+          }
+          break;
+        case 'remove':
+          if (tempCartProducts[product.id].count === 1) {
+            tempCartProducts = tempCartProducts.filter((prod) => prod.id !== product.id);
+          } else {
+            tempCartProducts[product.id].count -= 1;
+          }
+          break;
+        default:
+          break;
+      }
+      dispatch('setCartProducts', tempCartProducts);
+    },
     setCartProducts({ commit }, products = []) {
       localStorage.setItem('products', JSON.stringify(products));
-      commit('SET_PRODUCTS', products);
+      commit('SET_CART_PRODUCTS', products);
     },
     setInspectorProduct({ commit }, product) {
       commit('SET_INSPECTOR_PRODUCT', product);
@@ -52,6 +78,18 @@ export default new Vuex.Store({
   getters: {
     getInspectorProduct(state) {
       return state.inspectorProduct >= 0 ? state.products[state.inspectorProduct] : null;
+    },
+    getCartTotal(state) {
+      let total = 0;
+      if (state.cartProducts) {
+        const prodsKey = Object.keys(state.cartProducts);
+        prodsKey.forEach((key) => {
+          for (let i = 0; i < state.cartProducts[key].count; i += 1) {
+            total += parseInt(state.cartProducts[key].price, 10);
+          }
+        });
+      }
+      return total;
     },
   },
 });

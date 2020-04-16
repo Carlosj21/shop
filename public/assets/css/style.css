@@ -30,6 +30,16 @@
     filter: blur(4px);
 }
 
+.product-cart-count {
+    background: rgba(117, 32, 149, 0.83);
+    width: 25px;
+    border-radius: 20px;
+    position: absolute;
+    color: #FFFFFF;
+    text-align: center;
+    z-index: 1;
+}
+
 .product-title {
     margin-top: 5px;
     margin-bottom: 5px;
