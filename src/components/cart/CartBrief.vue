@@ -4,6 +4,11 @@
 
 <script>
 export default {
-  name: 'Shopping',
+  name: 'CartBrief',
+  data() {
+    return {
+      key: 'value',
+    };
+  },
 };
 </script>
