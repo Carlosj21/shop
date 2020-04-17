@@ -13,7 +13,13 @@
     <div class="row">
       <div v-if="inspectorProduct">
         <div class="row">
-          <div class="product-cart-count white-text" v-if="cartCount > 0">{{cartCount}}</div>
+          <div class="product-cart-count white-text"
+               v-if="cartCount > 0">{{cartCount}}</div>
+          <div class="product-cart-clear white-text u-pull-right"
+               style="right: 0;" v-if="cartCount > 0"
+               @click="manageProductToCart({product: inspectorProduct, action: 'clearProd'})">
+            <font-awesome-icon icon="trash"/>
+          </div>
           <div class="inspector-product-image center-content">
             <img :src="inspectorProduct.image" alt="imagen" height="200">
           </div>

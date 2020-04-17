@@ -71,16 +71,19 @@ export default new Vuex.Store({
           break;
         case 'remove':
           if (tempCartProducts[product.id]) {
-            if (tempCartProducts[product.id].count === 1) {
-              delete tempCartProducts[product.id];
-              // tempCartProducts = tempCartProducts.filter((prod) => prod.id !== product.id);
-            } else {
-              tempCartProducts[product.id].count -= 1;
-            }
+            tempCartProducts[product.id].count -= 1;
           }
+          break;
+        case 'clearProd':
+          delete tempCartProducts[product.id];
           break;
         default:
           break;
+      }
+      if (tempCartProducts[product.id]) {
+        if (tempCartProducts[product.id].count < 1) {
+          delete tempCartProducts[product.id];
+        }
       }
       dispatch('setCartProducts', tempCartProducts);
     },

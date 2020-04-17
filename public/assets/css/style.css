@@ -52,6 +52,17 @@
     z-index: 1;
 }
 
+.product-cart-clear {
+    background: rgba(117, 32, 149, 0.83);
+    width: 25px;
+    border-radius: 20px;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    right: 0;
+    cursor: pointer;
+}
+
 .product-title {
     margin-top: 5px;
     margin-bottom: 5px;
