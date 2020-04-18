@@ -18,6 +18,7 @@ export default {
   },
   methods: {
     processCheckout(amount) {
+      // se deshabilita eslint para que no notifique error por objeto desconocido
       // eslint-disable-next-line no-undef
       this.checkout = new WidgetCheckout({
         currency: 'COP',
