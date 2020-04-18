@@ -159,21 +159,21 @@
 
 /*Sobreescribo los estilos solo para este boton y no perder el comportamiento del de skeleton*/
 .cart-action-button {
-    background-color: #FFFFFF !important;
+    background-color: #eeeeee !important;
     display: inline-block !important;
-    height: 40px !important;
+    height: 30px !important;
     padding: 0px 14px !important;
-    color: #afafaf !important;
+    color: #3b3b3b !important;
     text-align: center !important;
     font-size: 15px !important;
-    font-weight: 500 !important;
-    line-height: 37px !important;
+    font-weight: bolder !important;
+    line-height: 30px !important;
     letter-spacing: 0.1rem !important;
     text-transform: uppercase !important;
     text-decoration: none !important;
     white-space: nowrap !important;
-    border-radius: 11px !important;
-    border: 1px solid #bbb !important;
+    border-radius: 0px !important;
+    border: 0px !important;
     cursor: pointer !important;
     box-sizing: border-box !important;
 }
