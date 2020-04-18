@@ -2,15 +2,23 @@
   <div>
     <div class="row">
       <div class="store-header">
-        <div class="u-pull-right">
-          <button @click="toggleCart()" class="cart-button white-text" v-if="!showCartItems">
-            <font-awesome-icon icon="shopping-cart"/>
-            {{ cartTotal }}
-          </button>
-          <button @click="toggleCart()" class="cart-button-secondary" v-else>
-            <font-awesome-icon icon="shopping-cart"/>
-            {{ cartTotal }}
-          </button>
+        <div class="row">
+          <div class="u-pull-right">
+            <button @click="toggleCart()" class="cart-button white-text" v-if="!showCartItems">
+              <font-awesome-icon icon="shopping-cart"/>
+              {{ cartTotal }}
+            </button>
+            <button @click="toggleCart()" class="cart-button-secondary" v-else>
+              <font-awesome-icon icon="shopping-cart"/>
+              {{ cartTotal }}
+            </button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="store-title">
+            <span v-if="showCartItems">Shopping Cart</span>
+            <span v-else>Product</span>
+          </div>
         </div>
       </div>
     </div>
