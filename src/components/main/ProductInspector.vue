@@ -3,11 +3,11 @@
     <div class="row">
       <div class="store-header">
         <div class="u-pull-right">
-          <button v-if="!showCartItems" class="cart-button white-text" @click="toggleCart()">
+          <button @click="toggleCart()" class="cart-button white-text" v-if="!showCartItems">
             <font-awesome-icon icon="shopping-cart"/>
             {{ cartTotal }}
           </button>
-          <button v-else class="cart-button-secondary" @click="toggleCart()">
+          <button @click="toggleCart()" class="cart-button-secondary" v-else>
             <font-awesome-icon icon="shopping-cart"/>
             {{ cartTotal }}
           </button>
@@ -16,18 +16,28 @@
     </div>
     <div class="row">
       <div v-if="showCartItems">
-        <div v-for="(product, i) in cartProducts" :key="i">
-          <cart-product-item :product="product"></cart-product-item>
+        <div class="row" v-if="cartTotal > 0">
+          <div :key="i" v-for="(product, i) in cartProducts">
+            <cart-product-item :product="product"></cart-product-item>
+          </div>
+        </div>
+        <div class="row" v-else>
+          Your cart is empty :(
+        </div>
+        <div class="row u-pull-right cart-total">
+          <span class="total-title">Total:</span>
+          <span class="total-ammount">${{cartTotal}}</span>
         </div>
       </div>
       <div v-else>
         <div v-if="inspectorProduct">
           <div class="row">
             <div class="product-cart-count white-text"
-                 v-if="cartCount > 0">{{cartCount}}</div>
-            <div class="product-cart-clear white-text u-pull-right"
-                 style="right: 0;" v-if="cartCount > 0"
-                 @click="manageProductToCart({product: inspectorProduct, action: 'clearProd'})">
+                 v-if="cartCount > 0">{{cartCount}}
+            </div>
+            <div @click="manageProductToCart({product: inspectorProduct, action: 'clearProd'})"
+                 class="product-cart-clear white-text u-pull-right" style="right: 0;"
+                 v-if="cartCount > 0">
               <font-awesome-icon icon="trash"/>
             </div>
             <div class="inspector-product-image center-content">

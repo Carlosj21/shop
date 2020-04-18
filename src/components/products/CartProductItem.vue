@@ -1,5 +1,5 @@
 <template>
-  <div class="container cart-product-item">
+  <div class="cart-product-item">
     <div class="row">
       <div class="four columns">
         <div class="product-cart-count white-text">{{cartCount}}</div>
@@ -7,6 +7,10 @@
       </div>
       <div class="eight columns">
         <div class="">{{product.name}}</div>
+        <div @click="manageProductToCart({product, action: 'clearProd'})"
+             class="product-cart-clear white-text u-pull-right" style="right: 0;">
+          <font-awesome-icon icon="trash"/>
+        </div>
       </div>
     </div>
   </div>
