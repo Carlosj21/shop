@@ -2,8 +2,12 @@
   <div>
     <div class="row">
       <div class="store-header">
-        <div class="u-pull-left">
-          <img alt="logo" src="assets/img/icon.png" width="50">
+        <div class="row">
+          <div class="store-icon">
+            <font-awesome-icon icon="shopping-bag"/>
+          </div>
+        </div>
+        <div class="row">
           <div class="store-title">
             <span>Tienda</span>
           </div>

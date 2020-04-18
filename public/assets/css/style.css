@@ -17,6 +17,14 @@
     max-width: 100%;
 }
 
+.store-icon {
+    padding: 10px 15px 10px 15px;
+    background: #752095;
+    border-radius: 10px;
+    width: fit-content;
+    color: #FFFFFF;
+}
+
 .store-title {
     font-weight: bold;
     color: #752095;
