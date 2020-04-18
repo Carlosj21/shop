@@ -16,18 +16,7 @@
     </div>
     <div class="row">
       <div v-if="showCartItems">
-        <div class="row" v-if="cartTotal > 0">
-          <div :key="i" v-for="(product, i) in cartProducts">
-            <cart-product-item :product="product"></cart-product-item>
-          </div>
-        </div>
-        <div class="row" v-else>
-          Your cart is empty :(
-        </div>
-        <div class="row u-pull-right cart-total">
-          <span class="total-title">Total:</span>
-          <span class="total-ammount">${{cartTotal}}</span>
-        </div>
+        <cart-brief :cartProducts="cartProducts" :cartTotal="cartTotal"></cart-brief>
       </div>
       <div v-else>
         <div v-if="inspectorProduct">
@@ -85,12 +74,12 @@
 
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex';
-import CartProductItem from '@/components/products/CartProductItem.vue';
+import CartBrief from '@/components/cart/CartBrief.vue';
 
 export default {
   name: 'ProductInspector',
   components: {
-    CartProductItem,
+    CartBrief,
   },
   data() {
     return {

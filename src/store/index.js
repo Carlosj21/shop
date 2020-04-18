@@ -88,11 +88,15 @@ export default new Vuex.Store({
       dispatch('setCartProducts', tempCartProducts);
     },
     setCartProducts({ commit }, products = []) {
-      localStorage.setItem('products', JSON.stringify(products));
+      localStorage.setItem('cartProducts', JSON.stringify(products));
       commit('SET_CART_PRODUCTS', products);
     },
     setInspectorProduct({ commit }, product) {
       commit('SET_INSPECTOR_PRODUCT', product);
+    },
+    checkLocalStorage({ commit }) {
+      const localCartProds = localStorage.cartProducts ? JSON.parse(localStorage.cartProducts) : [];
+      commit('SET_CART_PRODUCTS', localCartProds);
     },
   },
   getters: {
